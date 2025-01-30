@@ -1,7 +1,8 @@
 <template>
     <Header @logout="logoutUser" />
     <div class="home-container">
-        <h1>Welcome to Dashboard</h1>
+        <h1>Welcome {{ currentUser?.name }}</h1>
+        <h2>Sample Dashboard</h2>
 
         <!-- CRUD Section for Items -->
         <section class="crud-section">
@@ -61,7 +62,8 @@ export default {
             newItem: "",
             editing: false,
             editId: null,
-            currentUserId: null 
+            currentUserId: null,
+            currentUser: null, 
         }
     },
     methods: {
@@ -177,6 +179,7 @@ export default {
         } else {
             const parsedUser = JSON.parse(user);
             this.currentUserId = parsedUser.id; 
+            this.currentUser = parsedUser;
             this.fetchItems();
         }
     }

@@ -71,7 +71,7 @@ export default {
             }
             try {
                 // Send data to the backend
-                let result = await axios.post(this.API_URL, {
+                let result = await axios.post(this.API_URL/+"/users", {
                     name: this.name,
                     email: this.email.trim(),
                     password: this.password.trim() 

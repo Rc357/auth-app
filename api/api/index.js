@@ -8,20 +8,24 @@ const cors = require('cors');
 const app = express();
 app.use(express.json());
 
+
+const allowedOrigins = [
+  /^http:\/\/localhost:\d+$/,
+  /^https:\/\/auth-app-flrg\.vercel\.app$/
+];
+
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin) return callback(null, true);
-    const localhostRegex = /^http:\/\/localhost:\d+$/;
-
-    const vercelDomainRegex = new RegExp(`^https://${process.env.URL}$`);
-
-    if (localhostRegex.test(origin) || vercelDomainRegex.test(origin)) {
+    const isAllowed = allowedOrigins.some((regex) => regex.test(origin));
+    if (isAllowed) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
     }
   },
 }));
+
 
 
 // Mongo Connection

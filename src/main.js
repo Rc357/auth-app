@@ -6,7 +6,8 @@ createApp(App).use(router).mount('#app')
 
 
 //Command to run project in local
-/*local Run, (can change port base on availability)*/
+/*local Run */
 //npm run serve
-/* RUN MONGO DB Server local */
+/* RUN MONGO DB Server, cd api */
+/** env file neede */
 //node server.js

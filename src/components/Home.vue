@@ -57,7 +57,7 @@ export default {
     data() {
         return {
             API_URL: process.env.NODE_ENV === 'live'
-                    ? `https://${process.env.VERCEL_URL}` 
+                    ? `https://${process.env.URL}` 
                     : 'http://localhost:3000',
             items: [],
             newItem: "",

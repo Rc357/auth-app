@@ -56,9 +56,7 @@ export default {
     components: { Header },
     data() {
         return {
-            API_URL: process.env.NODE_ENV === 'live'
-                    ? `https://${process.env.URL}` 
-                    : 'http://localhost:3000',
+            API_URL:  `https://${process.env.VUE_APP_APP_URL}`,
             items: [],
             newItem: "",
             editing: false,

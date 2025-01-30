@@ -31,7 +31,7 @@
     name: "LoginPage",
     data() {
       return {
-        API_URL:  `https://${process.env.VUE_APP_APP_URL}`,
+        API_URL:  `https://${process.env.VUE_APP_URL}`,
         email: '',
         password: '',
         errors: {}

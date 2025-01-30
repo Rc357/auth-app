@@ -36,7 +36,7 @@ export default {
     name: 'SignUp',
     data() {
         return {
-            API_URL:  `https://${process.env.VUE_APP_APP_URL}`,
+            API_URL:`https://${process.env.VUE_APP_URL}`,
             name: '',
             email: '',
             password: '',

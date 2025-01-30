@@ -1,4 +1,13 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './routers';
 
-createApp(App).mount('#app')
+createApp(App).use(router).mount('#app')
+
+
+//Command to run project in local
+/*local Run, (can change port base on availability)*/
+//vercel dev --port 5000 
+//npm run serve
+/* RUN MONGO DB Server local */
+//node server.js

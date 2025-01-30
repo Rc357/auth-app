@@ -13,7 +13,7 @@ app.use(cors({
     if (!origin) return callback(null, true);
     const localhostRegex = /^http:\/\/localhost:\d+$/;
 
-    const vercelDomainRegex = new RegExp(`^https://${process.env.VERCEL_URL}$`);
+    const vercelDomainRegex = new RegExp(`^https://${process.env.URL}$`);
 
     if (localhostRegex.test(origin) || vercelDomainRegex.test(origin)) {
       callback(null, true);
